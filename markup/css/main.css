@@ -496,7 +496,7 @@ textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   box-sizing: border-box;
-  border: 1px solid #999;
+  border: 1px solid #b2bfc8;
   padding: 0.4em 0.7em; }
   input[type='text']:focus,
   input[type='tel']:focus,
@@ -511,7 +511,7 @@ textarea {
   input[type='search']::-webkit-input-placeholder,
   input[type='password']::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder {
-    color: #999; }
+    color: #b2bfc8; }
   input[type='text']::-moz-placeholder,
   input[type='tel']::-moz-placeholder,
   input[type='email']::-moz-placeholder,
@@ -519,28 +519,28 @@ textarea {
   input[type='password']::-moz-placeholder,
   textarea::-moz-placeholder {
     opacity: 1;
-    color: #999; }
+    color: #b2bfc8; }
   input[type='text']:-moz-placeholder,
   input[type='tel']:-moz-placeholder,
   input[type='email']:-moz-placeholder,
   input[type='search']:-moz-placeholder,
   input[type='password']:-moz-placeholder,
   textarea:-moz-placeholder {
-    color: #999; }
+    color: #b2bfc8; }
   input[type='text']:-ms-input-placeholder,
   input[type='tel']:-ms-input-placeholder,
   input[type='email']:-ms-input-placeholder,
   input[type='search']:-ms-input-placeholder,
   input[type='password']:-ms-input-placeholder,
   textarea:-ms-input-placeholder {
-    color: #999; }
+    color: #b2bfc8; }
   input[type='text'].placeholder,
   input[type='tel'].placeholder,
   input[type='email'].placeholder,
   input[type='search'].placeholder,
   input[type='password'].placeholder,
   textarea.placeholder {
-    color: #999; }
+    color: #b2bfc8; }
 
 select {
   -webkit-border-radius: 0; }
@@ -560,7 +560,8 @@ input[type='submit'] {
 
 body {
   background-image: url(../images/bg-page.jpg);
-  background-position: 50% 0; }
+  background-position: 50% 0;
+  min-height: 100vh; }
 
 #wrapper {
   position: relative;
@@ -570,6 +571,53 @@ body {
   max-width: 1124px;
   margin: 0 auto;
   padding: 0 12px; }
+
+.placeholder .logo-box {
+  display: block;
+  margin-bottom: -90px; }
+  .placeholder .logo-box img {
+    display: block;
+    margin: 0 auto; }
+
+.placeholder .visual-box {
+  margin: 0 -150px; }
+  .placeholder .visual-box img {
+    display: block; }
+
+.placeholder .text-box {
+  background: url(../images/bg-text-placeholder.jpg) no-repeat;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset;
+  background-size: cover;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  padding: 56px 4% 90px;
+  margin-bottom: 40px;
+  font-size: 28px; }
+  .placeholder .text-box h1 {
+    margin: 0 0 15px; }
+  .placeholder .text-box p {
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+
+@media (max-width: 1024px) {
+  .placeholder .logo-box {
+    margin-top: -50px; } }
+
+@media (max-width: 767px) {
+  .placeholder .logo-box {
+    margin-top: -71px; }
+  .placeholder .text-box {
+    font-size: 24px;
+    border-radius: 0;
+    margin: 0 -12px;
+    padding: 35px 4%; }
+    .placeholder .text-box h1 {
+      font-size: 46px; } }
+
+@media (max-width: 767px) and (max-width: 479px) {
+  .placeholder .logo-box {
+    margin: -50px 0; } }
 
 #header {
   position: relative;
@@ -685,7 +733,8 @@ body {
             flex-direction: row-reverse; }
 
 .post {
-  padding: 180px 0; }
+  padding: 180px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
   .post h1 {
     text-align: center;
     margin: 0 0 25px; }
@@ -698,6 +747,26 @@ body {
             justify-content: space-between; }
     .post .holder .img-hold {
       width: 45.5%; }
+      .post .holder .img-hold img {
+        display: block; }
+      .post .holder .img-hold.video-box {
+        border-radius: 2px;
+        border: 2px solid #b2bfc8;
+        overflow: hidden;
+        position: relative; }
+        .post .holder .img-hold.video-box a {
+          display: block;
+          position: relative;
+          z-index: 1; }
+          .post .holder .img-hold.video-box a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(24, 57, 96, 0.5);
+            z-index: 2; }
     .post .holder .text-box {
       width: 50%; }
 /*# sourceMappingURL=main.css.map */
