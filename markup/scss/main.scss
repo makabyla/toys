@@ -215,6 +215,8 @@ body{
 .post-holder{
   padding:40px 0 0;
   .post:nth-child(even){
+    background:url(../images/bg-post-even.jpg) repeat;
+    box-shadow:0 1px 1px $border-color inset;
     .holder{
       flex-direction: row-reverse;
     }
@@ -230,6 +232,7 @@ body{
   .holder{
     display: flex;
     justify-content:space-between;
+    align-items: flex-start;
     .img-hold{
       width:45.5%;
       img{display:block;}
@@ -238,10 +241,12 @@ body{
         border:2px solid $gray;
         overflow:hidden;
         position:relative;
+        box-shadow:0 10px 10px rgba(18, 26, 35, 0.2);
         a{
           display:block;
           position:relative;
           z-index:1;
+          &:hover{text-decoration:none;}
           &:before{
             content:'';
             position:absolute;
@@ -252,6 +257,19 @@ body{
             background: rgba(24, 57, 96, 0.5);
             z-index:2;
           }
+          &:after{
+            content: "\e902";
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            font-family: icomoon;
+            font-size:64px;
+            line-height:1;
+            color: $white;
+            z-index:3;
+            text-shadow:none;
+          }
         }
       }
     }
@@ -259,4 +277,35 @@ body{
       width:50%;
     }
   }
+}
+.btn{
+  display:inline-block;
+  vertical-align:top;
+  text-transform:uppercase;
+  font-weight:600;
+  background: $pink;
+  min-width:270px;
+  border-radius:25px;
+  text-align:center;
+  padding:18px;
+  font-size:18px;
+  color: $white;
+  @include button-bg($pink);
+  text-shadow: none;
+}
+
+.aside{
+  background:url(../images/bg-post-even.jpg) repeat;
+  box-shadow:0 1px 1px $border-color inset;
+  text-align:center;
+  padding:115px 0 80px;
+  font-size:28px;
+  line-height:1.214;
+  text-shadow:1px 1px 2px rgba(0, 0, 0, 0.3);
+  h1{
+    margin-bottom:20px;
+    line-height:1;
+    text-shadow: none;
+  }
+  p{margin:0 0 35px;}
 }
