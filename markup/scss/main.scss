@@ -835,3 +835,34 @@ h1{
     }
   }
 }
+.friends{
+  text-align:center;
+  h1{
+    margin-bottom:35px;
+  }
+  .box-holder{
+    font-size:0;
+    letter-spacing:-4px;
+    margin:0 -20px;
+    @include media('<tablet'){
+      margin:0 -10px;;
+    }
+    .friend-box{
+      width:50%;
+      padding:0 20px 40px;
+      display:inline-block;
+      vertical-align:top;
+      &:last-child{padding-bottom:0;}
+      img{display:block;}
+      @include media('<tablet'){
+        padding:0 10px 20px;
+      }
+      @include media('<phone'){
+        width:100%;
+      }
+    }
+  }
+}
+.join{
+  position:relative;
+}
