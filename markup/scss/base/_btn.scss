@@ -1,0 +1,64 @@
+.btn{
+  display:inline-block;
+  vertical-align:top;
+  text-transform:uppercase;
+  font-weight:600;
+  background: $pink;
+  min-width:270px;
+  border-radius:25px;
+  text-align:center;
+  padding:14px;
+  font-size:18px;
+  color: $white;
+  text-shadow: none;
+  transition:all 0.2s linear;
+  &:hover{
+    background:darken($pink,10%);
+  }
+  &.btn-alt{
+    background:$light-blue;
+    &:hover{
+      background: $pink;
+    }
+  }
+}
+.btn-continue,
+.btn-download{
+  position:relative;
+  padding:15px 18px 15px 48px;
+  span{
+    position:absolute;
+    top:9px;
+    left:12px;
+    font-size:33px;
+    line-height:1;
+  }
+}
+.btn.btn-round{
+  min-width:56px;
+  width:56px;
+  height:56px;
+  border-radius:100%;
+  font-size:41px;
+  padding:7px;
+  overflow:hidden;
+  line-height:1;
+  .icon-chevron-left{margin:0 0 0 -4px;}
+  .icon-chevron-right{margin:0 -4px 0 0;}
+}
+.btn.btn-item{
+  min-width:180px;
+  padding:12px 15px;
+  background:none;
+  border:2px solid $pink;
+  &:hover{
+    text-decoration:none;
+    background:$pink;
+  }
+  &.btn-continue{
+    border-color:$light-blue;
+     &:hover{
+      background:$light-blue;
+    }
+  }
+}
