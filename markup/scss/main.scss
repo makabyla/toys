@@ -863,6 +863,73 @@ h1{
     }
   }
 }
+.head-box{
+  text-align:center;
+  overflow:hidden;
+  .back{
+    float:left;
+    text-transform:uppercase;
+    font-weight:900;
+    color: $white;
+    text-decoration:underline;
+    &:hover{text-decoration:none;}
+  }
+  h1{
+    overflow:hidden;
+    margin:0 0 20px;
+  }
+}
+.news{
+  .content{
+    padding:0 0 55px;
+    column-count:2;
+    column-width:48%;
+    column-gap: 40px;
+    &:before{display:none;}
+    .img-hold{
+      width:auto;
+      display:inline-block;
+      vertical-align:top;
+      margin-bottom:25px;
+    }
+    @include media('<desktop'){
+      column-gap: 20px;
+    }
+    @include media('<tablet'){
+      column-count: auto;
+    }
+  }
+}
+.paging{
+  text-align:center;
+  .all{
+    display:inline-block;
+    vertical-align:top;
+    text-transform:uppercase;
+    font-weight:700;
+    margin:15px 40px;
+    a{
+      color: $white;
+      &:hover{
+        text-decoration:underline;
+        text-decoration:none;
+      }
+    }
+  }
+  .btn{
+    min-width:130px;
+    span{
+      font-size:14px;
+      margin:0 0 0 5px;
+      &.icon-arrow-left{margin:0 5px 0 0;}
+    }
+  }
+  @include media('<phone'){
+    .all{
+      display:block;
+    }
+  }
+}
 .join{
   position:relative;
 }

@@ -634,7 +634,8 @@ input[type='submit'] {
   -webkit-transition: all 0.2s linear;
           transition: all 0.2s linear; }
   .btn:hover {
-    background: #ac1346; }
+    background: #ac1346;
+    text-decoration: none; }
   .btn.btn-alt {
     background: #10bfff; }
     .btn.btn-alt:hover {
@@ -1462,6 +1463,74 @@ body {
       @media (max-width: 479px) {
         .friends .box-holder .friend-box {
           width: 100%; } }
+
+.head-box {
+  text-align: center;
+  overflow: hidden; }
+  .head-box .back {
+    float: left;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: underline; }
+    .head-box .back:hover {
+      text-decoration: none; }
+  .head-box h1 {
+    overflow: hidden;
+    margin: 0 0 20px; }
+
+.news .content {
+  padding: 0 0 55px;
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-width: 48%;
+     -moz-column-width: 48%;
+          column-width: 48%;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px; }
+  .news .content:before {
+    display: none; }
+  .news .content .img-hold {
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 25px; }
+  @media (max-width: 1023px) {
+    .news .content {
+      -webkit-column-gap: 20px;
+         -moz-column-gap: 20px;
+              column-gap: 20px; } }
+  @media (max-width: 767px) {
+    .news .content {
+      -webkit-column-count: auto;
+         -moz-column-count: auto;
+              column-count: auto; } }
+
+.paging {
+  text-align: center; }
+  .paging .all {
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 15px 40px; }
+    .paging .all a {
+      color: #fff; }
+      .paging .all a:hover {
+        text-decoration: underline;
+        text-decoration: none; }
+  .paging .btn {
+    min-width: 130px; }
+    .paging .btn span {
+      font-size: 14px;
+      margin: 0 0 0 5px; }
+      .paging .btn span.icon-arrow-left {
+        margin: 0 5px 0 0; }
+  @media (max-width: 479px) {
+    .paging .all {
+      display: block; } }
 
 .join {
   position: relative; }
