@@ -1,5 +1,6 @@
 jQuery(function(){
     initNav();
+    initGalleryAction();
 });
 
 function initNav(){
@@ -11,4 +12,25 @@ function initNav(){
         e.stopPropagation();
         $('body').removeClass('nav-active');
     });
+}
+function initGalleryAction(){
+    if($('.gallery').length){
+        $('.gallery').slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          adaptiveHeight: true
+        });
+    }
+
+    if($('.flesh-gallery').length){
+        $('.flesh-gallery').slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          adaptiveHeight: true
+        });
+    }
 }

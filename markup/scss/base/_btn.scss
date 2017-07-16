@@ -12,6 +12,11 @@
   color: $white;
   text-shadow: none;
   transition:all 0.2s linear;
+  span{
+    margin:0 16px -1px 0;
+    display:inline-block;
+    vertical-align:top;
+  }
   &:hover{
     background:darken($pink,10%);
     text-decoration:none;
@@ -33,6 +38,7 @@
     left:12px;
     font-size:33px;
     line-height:1;
+    margin:0;
   }
 }
 .btn.btn-round{
@@ -44,8 +50,8 @@
   padding:7px;
   overflow:hidden;
   line-height:1;
-  .icon-chevron-left{margin:0 0 0 -4px;}
-  .icon-chevron-right{margin:0 -4px 0 0;}
+  span.icon-chevron-left{margin:0 0 0 -4px;}
+  span.icon-chevron-right{margin:0 -4px 0 0;}
 }
 .btn.btn-item{
   min-width:180px;
@@ -62,4 +68,25 @@
       background:$light-blue;
     }
   }
+}
+.btn.btn-watch{
+  font-size:10px;
+  width:90px;
+  text-align:right;
+  padding:12px 37px 12px 10px;
+  position:relative;
+  &:before{
+    content:'';
+    position:absolute;
+    top:50%;
+    right:15px;
+    transform: translateY(-50%);
+    border-left:10px solid $white;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+  }
+}
+button.btn{
+  border:none;
+  outline:none;
 }

@@ -18,11 +18,17 @@ textarea {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   box-sizing: border-box;
-  border: 1px solid $form-element-border-color;
+  border: 2px solid $form-element-border-color;
   padding: $form-element-padding;
+  border-radius:25px;
+  background:none;
+  text-align:center;
+  outline:none;
+  transition:border-color 0.2s linear;
+  font-weight:600;
 
   // &:hover {
-    
+
   // }
 
   &:focus {
