@@ -136,6 +136,14 @@ body{
   left:0;
   background: rgba(26, 59, 96, 0.7);
   display:none;
+  z-index:3;
+  label{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+  }
 }
 .nav-active{
   .page-overlay{
@@ -143,9 +151,24 @@ body{
   }
   #nav .slide-nav{margin:0;}
 }
+#show-menu{
+ position:fixed;
+ top:-9999px;
+ left:-9999px;
+ z-index:-1;
+}
+label[for="show-menu"]{
+  cursor:pointer;
+}
+input#show-menu:checked ~ .slide-nav{
+  margin:0;
+}
+input#show-menu:checked ~ .page-overlay{
+  display:block;
+}
 #nav{
   float:right;
-  padding:15px 0;
+  padding:22px 0 0;
   .nav-opener{
     display:inline-block;
     vertical-align:top;
@@ -171,54 +194,60 @@ body{
       bottom:0;
     }
   }
-  .slide-nav{
-    position:fixed;
-    right:0;
-    top:0;
-    z-index:2;
-    width: 260px;
-    height:100%;
-    overflow-y:auto;
-    padding:40px 20px 12px;
-    background: $black;
-    margin:0 -260px 0 0;
-    transition:margin 0.2s linear;
-    .nav-close{
+  @include media('<tablet'){
+    padding:15px 0 0;
+  }
+}
+.slide-nav{
+  position:fixed;
+  right:0;
+  top:0;
+  z-index:4;
+  width: 260px;
+  height:100%;
+  overflow-y:auto;
+  padding:40px 20px 12px;
+  background: $black;
+  margin:0 -260px 0 0;
+  transition:margin 0.2s linear;
+  .nav-close{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:30px;
+    height:23px;
+    &:before, &:after{
+      content:'';
       position:absolute;
-      top:15px;
-      right:15px;
-      width:30px;
-      height:23px;
-      &:before, &:after{
-        content:'';
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-        height:3px;
-        border-radius:3px;
-        background: $white;
-        transform: rotate(45deg);
-        margin-top:10px;
-      }
-      &:after{
-        transform: rotate(-45deg);
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      border-radius:3px;
+      background: $white;
+      transform: rotate(45deg);
+      margin-top:10px;
+    }
+    &:after{
+      transform: rotate(-45deg);
+    }
+  }
+  ul{
+    @extend %listreset;
+    text-align:right;
+    padding:30px 0 0;
+    font-size:22px;
+    li{
+      margin:0 0 15px;
+      &.active{
+        a{color: $white;}
       }
     }
-    ul{
-      @extend %listreset;
-      text-align:right;
-      padding:30px 0 0;
-      font-size:22px;
-      li{
-        margin:0 0 15px;
-      }
-      a{
-        transition:all 0.2s linear;
-        &:hover{
-          text-decoration:none;
-          color: $pink;
-        }
+    a{
+      transition:all 0.2s linear;
+      &:hover{
+        text-decoration:none;
+        color: $pink;
       }
     }
   }
