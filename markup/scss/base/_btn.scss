@@ -90,3 +90,9 @@ button.btn{
   border:none;
   outline:none;
 }
+.more{
+  text-transform:uppercase;
+  text-decoration:underline;
+  font-weight:600;
+  &:hover{text-decoration:none;}
+}

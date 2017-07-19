@@ -112,7 +112,7 @@ body{
 }
 #header{
   position:relative;
-  padding:20px 0;
+  padding:50px 0 35px;
   z-index:2;
   @include media('<tablet'){
     padding:15px 0;
@@ -145,12 +145,6 @@ body{
     right:0;
   }
 }
-.nav-active{
-  .page-overlay{
-    display:block;
-  }
-  #nav .slide-nav{margin:0;}
-}
 #show-menu{
  position:fixed;
  top:-9999px;
@@ -166,36 +160,19 @@ input#show-menu:checked ~ .slide-nav{
 input#show-menu:checked ~ .page-overlay{
   display:block;
 }
-#nav{
+.nav-opener{
   float:right;
-  padding:22px 0 0;
-  .nav-opener{
+  margin:22px 0 0;
+  position:relative;
+  color: $white;
+  font-size:23px;
+  line-height:1;
+  span{
     display:inline-block;
     vertical-align:top;
-    width:30px;
-    height:23px;
-    position:relative;
-    &:before, &:after, span{
-      content:'';
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:3px;
-      border-radius:3px;
-      background: $white;
-    }
-    span{
-      top:50%;
-      transform: translateY(-50%);
-    }
-    &:after{
-      top:auto;
-      bottom:0;
-    }
   }
   @include media('<tablet'){
-    padding:15px 0 0;
+    margin:15px 0 0;
   }
 }
 .slide-nav{
@@ -237,6 +214,7 @@ input#show-menu:checked ~ .page-overlay{
     text-align:right;
     padding:30px 0 0;
     font-size:22px;
+    text-transform:uppercase;
     li{
       margin:0 0 15px;
       &.active{
@@ -278,7 +256,7 @@ h1{
     }
   }
   .post:first-child{
-    padding:64px 0 188px;
+    padding:35px 0 188px;
   }
   @include media('<=desktop'){
     .post:first-child{
@@ -528,14 +506,14 @@ h1{
 
 .heading-box{
   background:url(../images/shadow-post02.png) no-repeat 50% 100%;
-  padding:63px 0 72px;
+  padding:0 0 72px;
   font-size:28px;
   text-align:center;
   h1{margin:0 0 15px;}
   .container{ max-width:550px;}
   p{margin:0;}
   @include media('<tablet'){
-    padding:30px 0;
+    padding:10px 0 30px;
     font-size:22px;
   }
 }
@@ -914,6 +892,7 @@ h1{
     text-transform:uppercase;
     font-weight:900;
     color: $white;
+    margin-right:10px;
     text-decoration:underline;
     &:hover{text-decoration:none;}
   }
@@ -945,31 +924,48 @@ h1{
 }
 .paging{
   text-align:center;
-  .all{
-    display:inline-block;
-    vertical-align:top;
-    text-transform:uppercase;
-    font-weight:700;
-    margin:15px 40px;
-    a{
-      color: $white;
-      &:hover{
-        text-decoration:underline;
-        text-decoration:none;
-      }
-    }
-  }
   .btn{
     min-width:130px;
+    margin:0 5px 10px;
     span{
       font-size:14px;
       margin:4px 0 0 5px;
       &.icon-arrow-left{margin:4px 5px 0 0;}
     }
   }
-  @include media('<phone'){
-    .all{
-      display:block;
+  .btn-continue{
+    min-width:160px;
+  }
+  .pages{
+    font-weight:600;
+    display:inline-block;
+    vertical-align:top;
+    padding:0 10px;
+    a{
+      display:inline-block;
+      vertical-align:top;
+      color: $white;
+      transition:color 0.2s linear;
+      margin:14px 15px;
+      &:hover{ color: $pink; }
+    }
+    .current{
+      display:inline-block;
+      vertical-align:top;
+      width:50px;
+      height:50px;
+      color: $pink;
+      text-decoration:underline;
+      border:2px solid $pink;
+      border-radius:50%;
+      padding:5px 2px 2px;
+      @include v-align;
+    }
+    @include media('<tablet'){
+      padding:10px 0 20px;
+      a{
+        margin: 14px 4px;
+      }
     }
   }
 }
@@ -992,6 +988,9 @@ h1{
     flex: 0 0 220px;
     min-width:220px;
     align-self: start;
+    &:hover{
+      background:#a61243;
+    }
   }
   .text{
     flex: 0 1 auto;
@@ -1179,9 +1178,6 @@ h1{
     }
   }
 }
-.cams{
-  .head-box h1{text-align:left;}
-}
 .home-page,
 .join-page{
   #header{
@@ -1258,6 +1254,7 @@ h1{
   padding:15px 0;
   border-top:1px solid $border-color;
   background-image:url(../images/bg-partners.jpg);
+  background-position:65% 100%;
   .text-box{
     max-width:410px;
     float:right;
@@ -1265,11 +1262,14 @@ h1{
   .text{
     max-width:100%;
   }
+  @include media('<1290px'){
+    background-position:37% 100%;
+  }
   @include media('<desktop'){
-    background-position:42% 100%;
+    background-position:32% 100%;
   }
   @include media('<phone'){
-    background-position:27% 100%;
+    background-position:24% 100%;
   }
 }
 .action{
@@ -1410,7 +1410,7 @@ h1{
   }
 }
 .join{
-  padding:112px 0 12px;
+  padding:160px 0 12px;
   background-image:url(../images/bg-join.jpg);
   align-items:flex-start;
   .heading-box{
@@ -1423,10 +1423,13 @@ h1{
   }
   @include media('<desktop'){
     background:none;
-    padding:53px 0 12px;
+    padding:160px 0 12px;
     .container{
       background:none;
     }
+  }
+  @include media('<tablet'){
+    padding:90px 0 12px;
   }
 }
 .join-form{
@@ -1823,6 +1826,53 @@ h1{
       h2{
         font-size:36px;
         margin:0 0 15px;
+      }
+    }
+  }
+}
+.news-list{
+  padding:0 0 40px;
+  .post{
+    padding:0 0 35px;
+    display:flex;
+    flex-wrap:wrap;
+    &:before{display:none;}
+    .text-box{
+      width:auto;
+      flex:0 1 72%;
+      padding:0 0 0 30px;
+      p{margin:0 0 10px;}
+    }
+    .img-box{
+      flex: 0 0 28%;
+    }
+    .head{
+      overflow:hidden;
+      padding:4px 0 3px;
+      h3{
+        text-transform:uppercase;
+        font-size:18px;
+        a{
+          color: $white;
+        }
+      }
+      .date{
+        float:right;
+        margin:0 0 0 10px;
+      }
+    }
+  }
+  @include media('<tablet'){
+    padding:0 0 20px;
+    .post{
+      display:block;
+      margin:0 0 20px;
+      .img-box{
+        text-align:center;
+        margin:0 0 10px;
+      }
+      .text-box{
+        padding:0;
       }
     }
   }
