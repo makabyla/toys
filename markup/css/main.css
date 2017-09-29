@@ -488,8 +488,8 @@ th {
 
 @font-face {
 	font-family: "icomoon";
-	src: url("../fonts/icomoon.eot?rlon3d");
-	src: url("../fonts/icomoon.eot?rlon3d#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?rlon3d") format("truetype"), url("../fonts/icomoon.woff?rlon3d") format("woff"), url("../fonts/icomoon.svg?rlon3d#icomoon") format("svg");
+	src: url("../fonts/icomoon.eot?snh4sp");
+	src: url("../fonts/icomoon.eot?snh4sp#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?snh4sp") format("truetype"), url("../fonts/icomoon.woff?snh4sp") format("woff"), url("../fonts/icomoon.svg?snh4sp#icomoon") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -506,6 +506,14 @@ th {
 	line-height: 1; /* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-confirm:before {
+	content: "\e912";
+}
+
+.icon-not_confirm:before {
+	content: "\e913";
 }
 
 .icon-sendvich:before {
@@ -2154,6 +2162,7 @@ input#show-menu:checked ~ .page-overlay {
 	min-width: 220px;
 	-ms-flex-item-align: start;
 	align-self: start;
+	margin-right: -1px;
 }
 
 .download-box .btn:hover {
@@ -2404,11 +2413,11 @@ input#show-menu:checked ~ .page-overlay {
 	padding: 15px 0;
 	border-top: 1px solid #275991;
 	background-image: url(../images/bg-partners.jpg);
-	background-position: 65% 100%;
+	background-position: 50% 100%;
 }
 
 .parners .text-box {
-	max-width: 410px;
+	max-width: 420px;
 	float: right;
 }
 
@@ -2449,6 +2458,11 @@ input#show-menu:checked ~ .page-overlay {
 	box-shadow: 10px 2px 16px rgba(0, 0, 0, .3);
 }
 
+.gallery img {
+	border-radius: 12px;
+	display: block;
+}
+
 .library {
 	background-image: url(../images/bg-library.jpg);
 	padding: 15px 0;
@@ -2456,7 +2470,6 @@ input#show-menu:checked ~ .page-overlay {
 }
 
 .library .text-box {
-	margin-right: 76px;
 	float: right;
 	max-width: 420px;
 }
@@ -2974,6 +2987,116 @@ input#show-menu:checked ~ .page-overlay {
 	margin: 0 0 0 10px;
 }
 
+.confirm .heading-box {
+	padding-top: 30px;
+}
+
+.confirm .heading-box .container {
+	max-width: 750px;
+}
+
+.confirm .visual {
+	background-image: url(../images/bg-confirm.jpg);
+	text-align: center;
+	min-height: 412px;
+	font-family: "neuron", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.confirm .visual .container {
+	max-width: 440px;
+}
+
+.confirm .visual .icon-hold {
+	padding: 0 0 15px;
+	text-align: center;
+}
+
+.confirm .visual .icon-hold .icon {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 86px;
+	line-height: 90px;
+	color: #10bfff;
+}
+
+.confirm .visual h2 {
+	font-size: 29px;
+	line-height: 1;
+	text-transform: uppercase;
+	margin: 0 0 15px;
+	font-family: "neuron", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.confirm .visual .text {
+	max-width: 256px;
+	margin: 0 auto;
+	font-size: 18px;
+	font-family: "neuron", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+	font-weight: normal;
+	font-weight: 300;
+}
+
+.confirm .visual .text p {
+	margin: 0;
+}
+
+.confirm .visual .text .btn-click {
+	color: #fff;
+	background: #10bfff;
+	display: inline-block;
+	vertical-align: top;
+	padding: 1px 2px;
+	line-height: 1;
+	border-radius: 5px;
+	text-shadow: none;
+	font-weight: 300;
+	-webkit-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
+.confirm .visual .text .btn-click span {
+	font-size: 65%;
+}
+
+.confirm .visual .text .btn-click:hover {
+	text-decoration: none;
+	background: #da1859;
+}
+
+.not-confirm .visual {
+	background-image: url(../images/bg-not-confirm.jpg);
+}
+
+.not-confirm .visual h2 {
+	font-size: 18px;
+	text-transform: uppercase;
+	background: #da1859;
+	border-radius: 5px;
+	padding: 18px;
+	margin: 0 0 10px;
+	max-width: 315px;
+	display: inline-block;
+	vertical-align: top;
+	font-weight: 500;
+}
+
+.not-confirm .visual .icon-hold .icon {
+	color: #fff;
+}
+
+.not-confirm .visual .text {
+	padding: 5px 10px;
+}
+
+.not-confirm .visual .text a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.not-confirm .visual .text a:hover {
+	text-decoration: none;
+}
+
 @media (max-width: 1289px) {
 	.parners {
 		background-position: 37% 100%;
@@ -3318,6 +3441,7 @@ input#show-menu:checked ~ .page-overlay {
 		-webkit-column-count: auto;
 		-moz-column-count: auto;
 		column-count: auto;
+		padding: 0;
 	}
 
 	.paging .pages {
@@ -3328,16 +3452,47 @@ input#show-menu:checked ~ .page-overlay {
 		margin: 14px 4px;
 	}
 
-	.two-columns .content-box {
+	.download-box {
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		padding: 5px 0 0;
+	}
+
+	.download-box .title {
 		-webkit-box-flex: 0;
-		-ms-flex: 0 0 calc(100% - 200px);
-		flex: 0 0 calc(100% - 200px);
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		text-align: center;
+	}
+
+	.download-box .text {
+		padding: 5px;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		text-align: center;
+	}
+
+	.download-box .btn {
+		margin-top: 12px;
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		border-radius: 0;
+		margin-right: 0;
+	}
+
+	.two-columns {
+		display: block;
+		padding-bottom: 25px;
 	}
 
 	.two-columns .sidebar {
-		-webkit-box-flex: 0;
-		-ms-flex: 0 0 200px;
-		flex: 0 0 200px;
+		padding: 40px 0 0;
+	}
+
+	.two-columns .sidebar:before {
+		display: none;
 	}
 
 	.visual {
@@ -3457,6 +3612,38 @@ input#show-menu:checked ~ .page-overlay {
 	.news-list .post .text-box {
 		padding: 0;
 	}
+
+	.confirm .visual {
+		padding-top: 0;
+		position: relative;
+		background: none;
+		min-height: 1px;
+		background: none;
+	}
+
+	.confirm .visual .container {
+		background: none;
+	}
+
+	.confirm .heading-box {
+		min-height: 160px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-position: 50% 0;
+	}
+
+	.confirm .visual {
+		padding: 20px 0;
+		background: url(../images/bg-post-even.jpg) no-repeat;
+	}
+
+	.not-confirm .visual {
+		background: url(../images/bg-post-even.jpg) no-repeat;
+	}
 }
 
 @media (max-width: 767px) and (max-width: 479px) {
@@ -3522,36 +3709,6 @@ input#show-menu:checked ~ .page-overlay {
 
 	.friends .box-holder .friend-box {
 		width: 100%;
-	}
-
-	.download-box {
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		padding: 5px 0 0;
-	}
-
-	.download-box .text {
-		padding: 0 5px;
-		-webkit-box-flex: 0;
-		-ms-flex: 0 0 calc(100% - 167px);
-		flex: 0 0 calc(100% - 167px);
-	}
-
-	.download-box .btn {
-		margin-top: 12px;
-		-webkit-box-flex: 0;
-		-ms-flex: 0 0 100%;
-		flex: 0 0 100%;
-	}
-
-	.two-columns .content-box {
-		-webkit-box-flex: 0;
-		-ms-flex: 0 0 100%;
-		flex: 0 0 100%;
-	}
-
-	.two-columns .sidebar {
-		display: none;
 	}
 
 	.bonus-list .row {
