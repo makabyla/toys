@@ -896,6 +896,11 @@ h1{
     text-decoration:underline;
     &:hover{text-decoration:none;}
   }
+  .mark{
+    text-transform:uppercase;
+    color: $pink;
+    font-weight:700;
+  }
   h1{
     overflow:hidden;
     margin:0 0 20px;
@@ -2006,6 +2011,240 @@ h1{
   @include media('<tablet'){
     .visual{
       background:url(../images/bg-post-even.jpg) no-repeat;
+    }
+  }
+}
+.video-section{
+  .head-box{
+    max-width: 600px;
+    margin:0 auto 40px;
+    overflow:visible;
+    position:relative;
+    z-index:2;
+  }
+}
+.video-list{
+  position:relative;
+  z-index:1;
+  font-size:0;
+  letter-spacing:-4px;
+  margin:0 -4px 70px;
+  .item{
+    display:inline-block;
+    vertical-align:top;
+    font-size:18px;
+    letter-spacing:0;
+    padding:0 4px;
+    width:33.332%;
+    margin-bottom:20px;
+  }
+  h2{
+    text-transform:uppercase;
+    font-weight:700;
+    font-size:18px;
+    margin:0;
+    a{
+      text-decoration:underline;
+      &:hover{
+        text-decoration:none;
+      }
+    }
+  }
+  .img-box{
+    text-align:center;
+    position:relative;
+    margin:0 0 5px;
+    a{
+      display:inline-block;
+      vertical-align:top;
+      text-align:left;
+      position:relative;
+      border-radius:3px;
+      overflow:hidden;
+      &:hover{
+        img{
+          transform: scale(1.06, 1.06);
+        }
+      }
+      &:after{
+        content:'';
+        border-radius:3px;
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        box-shadow:1px 1px 2px rgba(255, 255, 255, 0.7) inset, -1px -1px 2px rgba(255, 255, 255, 0.7) inset;
+        z-index:3;
+      }
+    }
+    img{
+      vertical-align:top;
+      position:relative;
+      border-radius:3px;
+      z-index:2;
+      transition:transform 0.3s linear;
+    }
+    .time{
+      position:absolute;
+      bottom:0;
+      left:6px;
+      z-index:4;
+      color:$white;
+      background: $pink;
+      padding:4px 6px;
+      border-radius:10px 10px 0 0;
+      span{
+        display:inline-block;
+        vertical-align:top;
+        margin:1px 2px 0 0;
+      }
+    }
+  }
+  @include media('<tablet'){
+    margin-bottom:40px;
+  }
+  @include media('<phone'){
+    margin-bottom:20px;
+    .item{
+      width:50%;
+    }
+    .img-box{
+      .time{
+        font-size:14px;
+      }
+    }
+  }
+}
+.filter-box{
+  position:relative;
+  display:inline-block;
+  vertical-align:top;
+  .btn{
+    text-align:left;
+    padding-left:45px;
+    padding-right:58px;
+    position:relative;
+    &:before{
+      content:'';
+      position:absolute;
+      top:12px;
+      bottom:12px;
+      background: $white;
+      width:2px;
+      z-index:3;
+      right:56px;
+    }
+    &:after{
+      z-index:3;
+      content: "\e916";
+      font-size:12px;
+      font-family: icomoon;
+      position:absolute;
+      top:50%;
+      margin:-6px 0 0;
+      right:18px;
+      color: $white;
+      transition:transform 0.3s linear;
+    }
+  }
+  .name{
+    position:relative;
+    z-index:3;
+  }
+  &.active{
+    .btn{
+      background: $pink;
+      border-radius:25px 25px 0 0;
+      &:after{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .slide{
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:0;
+    width:100%;
+    background: $pink;
+    border-radius:25px;
+    text-align:left;
+    padding:55px 10px 5px 45px;
+    max-height:260px;
+    overflow-y:auto;
+  }
+  ul{
+    @extend %listreset;
+    text-transform:uppercase;
+    li{
+      margin:0 0 5px;
+      a{
+        color:$white;
+      }
+    }
+  }
+}
+.video-post{
+  .video-box{
+    margin:0 0 18px;
+  }
+  .video-info{
+    overflow:hidden;
+    .text-box{
+      float:left;
+      width:100%;
+      padding:0 300px 0 0;
+    }
+    .btn-hold{
+      float:right;
+      margin:0 0 0 -270px;
+      .btn{
+        span{
+          font-size:120%;
+          display:inline-block;
+          vertical-align:top;
+          margin:0 -15px 0 10px;
+        }
+      }
+    }
+    h3{
+      text-transform:uppercase;
+      font-size:18px;
+      margin:0 0 12px;
+      font-weight:900;
+    }
+  }
+  @include media('<phone'){
+    .video-info{
+      .text-box{
+        float:none;
+        width:auto;
+        padding:0 0 15px;
+      }
+      .btn-hold{
+        float:none;
+        margin:0;
+        text-align:center;
+      }
+    }
+  }
+}
+.tags{
+  font-size:18px;
+  line-height:20px;
+  .title{
+    display:inline-block;
+    vertical-align:top;
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  a{
+    display:inline-block;
+    vertical-align:top;
+    text-decoration:underline;
+    &:hover{
+      text-decoration:none;
     }
   }
 }
